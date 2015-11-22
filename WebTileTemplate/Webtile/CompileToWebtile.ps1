@@ -4,7 +4,7 @@ $source = "..\..\src"
 
 $destination = $project+".webtile"
 
-If(Test-path $destination) {Remove-item $destination}
+Remove-item *.*
 
 Add-Type -assembly "system.io.compression.filesystem"
 
