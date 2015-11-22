@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="Microsoft_Band_Webtile_Template.Ronnie Hegelund.e70d0061-5aba-487a-85ff-6bd9bb479119" Version="1.0" Language="en-US" Publisher="Ronnie Hegelund" />
+    <DisplayName>Microsoft Band Webtile Template</DisplayName>
+    <Description xml:space="preserve">This is a simple template that contains the structure from simpleTileSample from the sample code at https://developer.microsoftband.com/WebTile when building the project it will automatically generate the webtile package for you and place it in your bin folder.</Description>
+    <MoreInfo>https://developer.microsoftband.com/WebTile</MoreInfo>
+    <GettingStartedGuide>https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf</GettingStartedGuide>
+    <Tags>Microsoft Band, Webtile</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Microsoft Band Webtile Template.zip" />
+  </Assets>
+</PackageManifest>

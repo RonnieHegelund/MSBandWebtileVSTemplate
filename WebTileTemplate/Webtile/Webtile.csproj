@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TemplateProjectOutputGroup|AnyCPU'">
+    <OutputPath>bin\TemplateProjectOutputGroup\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +53,7 @@
     <None Include="CompileToWebtile.ps1" />
     <None Include="src\manifest.json" />
   </ItemGroup>
+  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -file "$(SolutionDir)\$(ProjectName)\CompileToWebtile.ps1" "$(ProjectName)"</PostBuildEvent>
