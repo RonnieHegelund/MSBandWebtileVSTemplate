@@ -1,0 +1,114 @@
+{
+  "manifestVersion": 1,
+  "name": "SEA & JFK weather",
+  "description": "This tiles shows the current weather for SEA and JFK airport. ",
+  "version": 1,
+  "versionString": "1",
+  "author": "Microsoft Band Team",
+  "organization": "Microsoft",
+  "contactEmail": "healthms@microsoft.com",
+  "tileIcon": {
+    "46": "icons/tileIcon.png"
+  },
+  "icons": {
+    "SEAIcon": "icons/SEA.png",
+    "JFKIcon": "icons/JFK.png"
+  },
+  "refreshIntervalMinutes": 30,
+  "resources": [
+    {
+      "url": "http://services.faa.gov/airport/status/SEA?format=json",
+      "style": "Simple",
+      "content": {
+        "SEAweather": "weather.weather",
+        "SEAvisibility": "weather.visibility"
+      }
+    },
+    {
+      "url": "http://services.faa.gov/airport/status/JFK?format=json",
+      "style": "Simple",
+      "content": {
+        "JFKweather": "weather.weather",
+        "JFKvisibility": "weather.visibility"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "layout": "MSBand_NoScrollingText",
+      "condition": "true",
+      "textBindings": [
+        {
+          "elementId": "1",
+          "value": "Aiport Weather"
+        },
+        {
+          "elementId": "2",
+          "value": "SEA: {{SEAweather}}"
+        },
+        {
+          "elementId": "3",
+          "value": "JFK: {{JFKweather}}"
+        }
+      ]
+    },
+    {
+      "layout": "MSBand_SingleMetricWithSecondary",
+      "condition": "true",
+      "iconBindings": [
+        {
+          "elementId": "21",
+          "conditions": [
+            {
+              "condition": "true",
+              "icon": "SEAIcon"
+            }
+          ]
+        }
+      ],
+      "textBindings": [
+        {
+          "elementId": "11",
+          "value": "SEA"
+        },
+        {
+          "elementId": "12",
+          "value": "Visibility"
+        },
+        {
+          "elementId": "22",
+          "value": "{{SEAvisibility}}"
+        }
+      ]
+    },
+    {
+      "layout": "MSBand_SingleMetricWithSecondary",
+      "condition": "true",
+      "iconBindings": [
+        {
+          "elementId": "21",
+          "conditions": [
+            {
+              "condition": "true",
+              "icon": "JFKIcon"
+            }
+          ]
+        }
+      ],
+      "textBindings": [
+        {
+          "elementId": "11",
+          "value": "JFK"
+        },
+        {
+          "elementId": "12",
+          "value": "Visibility"
+        },
+        {
+          "elementId": "22",
+          "value": "{{JFKvisibility}}"
+        }
+      ]
+    }
+  ]
+}
